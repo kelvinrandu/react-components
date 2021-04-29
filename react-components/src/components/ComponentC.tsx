@@ -5,7 +5,8 @@ class ComponentC extends React.Component {
     render() {
       return (
         <div>
-          Hello {this.props.name}
+           {this.props.name ?  'yes':
+           'no'}
         </div>
       );
     }

@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-ComponentF.propTypes = {
+ComponentF.propType = {
+  name: PropTypes.string,
   
 };
 
-function ComponentF(props) {
+function ComponentF({ name }) {
   return (
     <div>
-      {props.name}
+      {name}
       
     </div>
   );

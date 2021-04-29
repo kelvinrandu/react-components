@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
+
 class ComponentP extends PureComponent {
     render() {
         return (
@@ -12,6 +13,7 @@ class ComponentP extends PureComponent {
 }
 
 ComponentP.propTypes = {
+    name: PropTypes.string,
 
 };
 
