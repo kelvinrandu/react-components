@@ -1,16 +1,46 @@
-import { Stack, HStack, VStack } from "@chakra-ui/react"
-import ComponentF from '../components/ComponentF'
-import ComponentC from '../components/ComponentC'
-import ComponentP from '../components/ComponentP'
+import React from 'react';
+import {  VStack   } from "@chakra-ui/layout";
+import { Button } from "@chakra-ui/button";
+import PropTypes from 'prop-types';
+import Login from '../components/Login'
+import Register from '../components/Register'
 
-export default function Home() {
- 
-  return (
-    <Stack>
-       <ComponentC name="class component"/>  
-      <ComponentF name="functional component"/>   
-      <ComponentP name="pure component"/>    
-    </Stack>
-    
-  )
+
+class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showLogin: true,
+      showRegister: false
+    };
+    this.handleToggleClick = this.handleToggleClick.bind(this);
+  }
+
+  handleToggleClick() {
+    this.setState(state => ({
+      showLogin: !state.showLogin,
+      showRegister: !state.showRegister
+    }));
+  }
+
+  render() {
+    return (
+      <VStack>  
+
+        <Button
+         onClick={this.handleToggleClick}
+         variantColor="teal" 
+         variant="outline" 
+         width="half" mt={4}>
+         {this.state.showLogin ? 'Register' : 'Login'}
+        </Button>
+        <Login show={this.state.showLogin} />
+        <Register show={this.state.showRegister} />
+
+        </VStack>
+    );
+  }
 }
+
+export default Home;
+  

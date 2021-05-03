@@ -8,7 +8,7 @@ NavBar.defaultProps = {
 };
 NavBar.PropType = {
     title: PropTypes.string ,
-    children: <PropTypes className="React N"></PropTypes>,
+    
     
 };
 function NavBar({children,title,...props}) {
