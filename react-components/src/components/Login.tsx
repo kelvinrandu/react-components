@@ -46,7 +46,11 @@ class Login extends React.Component  {
                       type="submit" 
                       variantColor="teal" 
                       variant="outline" 
-                      width="full" mt={4}>
+                      width="full" mt={4}
+                      _hover={{
+                        transform: 'translateY(-2px)',
+                        boxShadow: 'lg',
+                      }}>
                         Register
                     </Button>
 

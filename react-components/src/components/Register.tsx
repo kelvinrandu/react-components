@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Select } from "@chakra-ui/react"
 import { Box, Center, Heading } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
 import { FormControl, FormLabel} from "@chakra-ui/form-control";
@@ -31,11 +32,11 @@ function Register({ show }) {
                       <FormControl isRequired>
                         <FormLabel>Email</FormLabel>
                         <Input type="email" placeholder="test@test.com" />
-                      </FormControl>
-                      <FormControl isRequired mt={6}>
-                        <FormLabel>Password</FormLabel>
-                        <Input type="checkbox" />
-                      </FormControl>    
+                      </FormControl>   
+                      <FormControl isRequired>
+                        <FormLabel>Name</FormLabel>
+                        <Input type="text" placeholder="test@test.com" />
+                      </FormControl> 
                       <FormControl isRequired mt={6}>
                         <FormLabel>Password</FormLabel>
                         <Input type="password" placeholder="*******" />
@@ -43,6 +44,13 @@ function Register({ show }) {
                       <FormControl isRequired mt={6}>
                         <FormLabel>confirm Password</FormLabel>
                         <Input type="password" placeholder="*******" />
+                      </FormControl> 
+                      <FormControl isRequired mt={6}>
+                      <Select placeholder="Select role">
+                        <option value="option1">Supplier</option>
+                        <option value="option2">Retail</option>
+
+                      </Select>
                       </FormControl>              
                       <Button
                         type="submit" 

@@ -1,12 +1,15 @@
 import React from 'react';
 import {  VStack   } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
-import PropTypes from 'prop-types';
 import Login from '../components/Login'
 import Register from '../components/Register'
 
+type Istate ={
+  showLogin: boolean;
+  showRegister: boolean;
 
-class Home extends React.Component {
+}
+class Home extends React.Component<Istate> {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,7 +20,7 @@ class Home extends React.Component {
   }
 
   handleToggleClick() {
-    this.setState(state => ({
+    this.setState(state=> ({
       showLogin: !state.showLogin,
       showRegister: !state.showRegister
     }));
