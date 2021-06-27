@@ -20,7 +20,7 @@ const theme = extendTheme({
 interface Iprops extends FlexProps {
 
 }
-const Layout = ({children,height = "5px",...props}) => {
+const Layout = ({children,color = "black",...props}) => {
  
     return (
 

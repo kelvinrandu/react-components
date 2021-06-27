@@ -1,10 +1,12 @@
-import React from 'react';
+import React ,{ useContext} from 'react';
+import { MovieContext } from './MovieContext';
 import {
     Box,
     Flex,
     Avatar,
     HStack,
     Link,
+    Text,
     IconButton,
     Button,
     Menu,
@@ -19,6 +21,7 @@ import {
   import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
   const Links = ['Dashboard', 'Projects', 'Team'];
+
 
   const NavLink = ({ children }: { children: React.ReactNode }) => (
       
@@ -36,6 +39,7 @@ import {
   );
 function NavBar() {
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const [movies, setMovies]= useContext(MovieContext);
     return (
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
@@ -56,7 +60,9 @@ function NavBar() {
               {Links.map((link) => (
                 <NavLink key={link}>{link}</NavLink>
               ))}
+             
             </HStack>
+            <Box><Text>{movies.length} movies</Text></Box>
           </HStack>
           <Flex alignItems={'center'}>
             <Menu>
@@ -92,7 +98,6 @@ function NavBar() {
         ) : null}
       </Box>
 
-      <Box p={4}>Main Content Here</Box>
          
             
         </>
